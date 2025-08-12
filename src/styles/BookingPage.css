@@ -1,0 +1,111 @@
+/* General page background */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full height of viewport */
+    display: flex;
+    justify-content: center; /* Horizontal center */
+    align-items: center;     /* Vertical center */
+    background-color: #f8f9fa; /* Optional light background */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text and elements inside */
+}
+
+/* Calendar container */
+.react-calendar {
+  border: none !important;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.react-calendar__tile {
+  border-radius: 8px;
+  padding: 12px 0 !important;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for tiles */
+.react-calendar__tile:hover {
+  background-color: #cce5ff !important;
+  transform: scale(1.05);
+}
+
+/* Green available dates */
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.bg-success.text-white {
+  font-weight: bold;
+}
+
+/* Form card styling */
+.booking-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.booking-card h5 {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Input focus effect */
+.form-control:focus, .form-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+/* Button styling */
+.btn-primary {
+  background: linear-gradient(to right, #007bff, #0056b3);
+  border: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #0056b3, #003f88);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .react-calendar {
+    width: 100% !important;
+    font-size: 14px;
+  }
+
+  .booking-card {
+    margin-top: 15px;
+  }
+}
+
+/* Page wrapper for vertical + horizontal centering */
+.booking-container {
+  min-height: 100vh; /* Full screen height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Calendar centered */
+.react-calendar {
+  border: none !important;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+}

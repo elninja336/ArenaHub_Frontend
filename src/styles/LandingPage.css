@@ -1,0 +1,252 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+  color: #2e3a59;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(90deg, #0d47a1, #1976d2);
+  color: #979494;
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: default;
+  color: #979494;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.nav-links a {
+  color: #979494;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #ff9800;
+  outline: none;
+}
+
+/* Main */
+.main-content {
+  padding: 60px 0 80px;
+  text-align: center;
+}
+
+/* Hero */
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #0d47a1;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: #4a5a75;
+  max-width: 700px;
+  margin: 0 auto 25px;
+}
+
+/* Stadium Selection */
+.stadium-selection {
+  margin-top: 50px;
+}
+
+.stadium-selection h3 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  color: #0d47a1;
+  font-weight: 600;
+}
+
+.stadiums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+.stadium-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  padding: 25px 30px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  position: relative;
+  border: 3px solid transparent;
+}
+
+.stadium-card:hover,
+.stadium-card:focus {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  outline: none;
+}
+
+.stadium-card.selected {
+  border-color: #ff9800;
+  box-shadow: 0 20px 40px rgba(255, 152, 0, 0.3);
+  background: #fff9f0;
+  transform: translateY(-7px);
+}
+
+.stadium-card h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #ff9800;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.stadium-card p {
+  margin: 6px 0;
+  color: #667494;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* View & Book Button */
+.btn-view-book {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  background-color: #ff9800;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255,152,0,0.4);
+}
+
+.btn-view-book:hover,
+.btn-view-book:focus {
+  background-color: #e67e22;
+  outline: none;
+}
+
+/* Contact Section */
+.contact-us {
+  margin-top: 70px;
+  background-color: #0d47a1;
+  color: #fff;
+  padding: 50px 30px;
+  border-radius: 16px;
+}
+
+.contact-us h3 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.contact-us p {
+  font-size: 1.1rem;
+}
+
+.contact-us a {
+  color: #ffb347;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-us a:hover,
+.contact-us a:focus {
+  color: #fff;
+  outline: none;
+}
+
+/* Footer */
+.footer {
+  background-color: #1c2533;
+  color: #aaa;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links a {
+  color: #aaa;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+  color: #ff9800;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stadiums-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+}
+
+
