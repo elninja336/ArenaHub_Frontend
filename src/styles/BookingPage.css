@@ -1,25 +1,31 @@
-/* General page background */
+/* ====== General Page Background ====== */
 body {
     margin: 0;
     padding: 0;
-    height: 100vh; /* Full height of viewport */
+    min-height: 100vh; /* Full height */
     display: flex;
     justify-content: center; /* Horizontal center */
     align-items: center;     /* Vertical center */
-    background-color: #f8f9fa; /* Optional light background */
-    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #f0f4f8, #e6ecf3); /* Softer gradient */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* ====== Container Card ====== */
 .container {
     background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center text and elements inside */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
 }
 
-/* Calendar container */
+/* ====== Calendar Styling ====== */
 .react-calendar {
+  width: 100%;        /* Full width of its container */
+  max-width: 700px;   /* Or a fixed bigger width */
+  margin: 0 auto;     /* Center it horizontally */
   border: none !important;
   background: white;
   border-radius: 15px;
@@ -27,85 +33,104 @@ body {
   padding: 15px;
 }
 
+
 .react-calendar__tile {
-  border-radius: 8px;
-  padding: 12px 0 !important;
-  transition: background 0.3s ease, transform 0.2s ease;
+    border-radius: 10px;
+    padding: 15px 0 !important;
+    transition: all 0.25s ease-in-out;
 }
 
-/* Hover effect for tiles */
+/* Hover effect */
 .react-calendar__tile:hover {
-  background-color: #cce5ff !important;
-  transform: scale(1.05);
+    background-color: #cce5ff !important;
+    transform: scale(1.08);
 }
 
-/* Green available dates */
+/* ====== Color Codes for Dates ====== */
 .bg-success {
-  background-color: #28a745 !important;
+    background-color: #28a745 !important;
+    color: white !important;
+    font-weight: bold;
 }
 
-.bg-success.text-white {
-  font-weight: bold;
+.bg-warning {
+    background-color: #ffcccc !important; /* Soft red for full days */
+    color: #721c24 !important;
+    font-weight: bold;
 }
 
-/* Form card styling */
+.bg-primary {
+    background-color: #007bff !important;
+    color: white !important;
+}
+
+/* ====== Booking Card ====== */
 .booking-card {
-  background: white;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.booking-card:hover {
+    transform: translateY(-5px);
 }
 
 .booking-card h5 {
-  color: #007bff;
-  font-weight: bold;
+    color: #007bff;
+    font-weight: bold;
 }
 
-/* Input focus effect */
-.form-control:focus, .form-select:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+/* ====== Form Styling ====== */
+.form-control,
+.form-select {
+    font-size: 1rem;
+    padding: 12px;
+    border-radius: 8px;
 }
 
-/* Button styling */
+.form-control:focus,
+.form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+}
+
+/* ====== Button Styling ====== */
 .btn-primary {
-  background: linear-gradient(to right, #007bff, #0056b3);
-  border: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    border: none;
+    font-size: 1.05rem;
+    font-weight: bold;
+    padding: 12px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(to right, #0056b3, #003f88);
+    background: linear-gradient(to right, #0056b3, #003f88);
+    transform: scale(1.02);
 }
 
-/* Mobile responsiveness */
+/* ====== Responsiveness ====== */
 @media (max-width: 768px) {
-  .react-calendar {
-    width: 100% !important;
-    font-size: 14px;
-  }
+    .react-calendar {
+        width: 100% !important;
+        font-size: 0.9rem;
+    }
 
-  .booking-card {
-    margin-top: 15px;
-  }
+    .booking-card {
+        margin-top: 20px;
+        padding: 20px;
+    }
 }
 
-/* Page wrapper for vertical + horizontal centering */
+/* ====== Page Wrapper ====== */
 .booking-container {
-  min-height: 100vh; /* Full screen height */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Calendar centered */
-.react-calendar {
-  border: none !important;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  margin-bottom: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
 }

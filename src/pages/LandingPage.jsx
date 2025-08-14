@@ -9,9 +9,10 @@ export default function LandingPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axiosInstance.get("/stadiums")
-      .then(res => setStadiums(res.data))
-      .catch(err => console.error("Error fetching stadiums:", err));
+    axiosInstance
+      .get("/stadiums")
+      .then((res) => setStadiums(res.data))
+      .catch((err) => console.error("Error fetching stadiums:", err));
   }, []);
 
   const handleCardClick = (stadiumID) => {
@@ -19,13 +20,16 @@ export default function LandingPage() {
   };
 
   const handleViewBookClick = () => {
-    if (selectedStadiumID) {
+    if (selectedStadiumID !== null) {
       navigate("/booking", { state: { stadiumID: selectedStadiumID } });
+    } else {
+      alert("Please select a stadium first!");
     }
   };
 
   return (
     <>
+      {/* Header */}
       <header className="header">
         <div className="container header-container">
           <h1 className="logo">ArenaHub</h1>
@@ -39,13 +43,16 @@ export default function LandingPage() {
         </div>
       </header>
 
+      {/* Main Content */}
       <main className="main-content container">
+        {/* About Section */}
         <section className="hero" id="about">
           <h2>Welcome to ArenaHub</h2>
           <p>Your premier destination to book stadium slots effortlessly and securely.</p>
           <p>Explore our stadiums below and select the perfect venue for your event.</p>
         </section>
 
+        {/* Stadium Selection */}
         <section className="stadium-selection" id="stadiums">
           <h3>Choose Your Stadium</h3>
           <div className="stadiums-grid">
@@ -69,7 +76,7 @@ export default function LandingPage() {
                   <button
                     className="btn-view-book"
                     onClick={(e) => {
-                      e.stopPropagation();
+                      e.stopPropagation(); // prevent re-selecting
                       handleViewBookClick();
                     }}
                     aria-label={`View and book ${stadium.name}`}
@@ -82,12 +89,18 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* Contact Section */}
         <section className="contact-us" id="contact">
           <h3>Need Assistance?</h3>
-          <p>Contact our support team at <a href="mailto:support@arenahub.com">support@arenahub.com</a> or call <a href="tel:+1234567890">+1 234 567 890</a>.</p>
+          <p>
+            Contact our support team at{" "}
+            <a href="mailto:support@arenahub.com">support@arenahub.com</a> or call{" "}
+            <a href="tel:+255614351336">+255 614 351 336</a>.
+          </p>
         </section>
       </main>
 
+      {/* Footer */}
       <footer className="footer">
         <div className="container footer-container">
           <p>© 2025 ArenaHub. All rights reserved.</p>
